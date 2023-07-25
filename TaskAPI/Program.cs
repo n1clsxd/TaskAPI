@@ -33,7 +33,7 @@ app.MapGet("/tasks/{id}", async (int id, AppDbContext db) => await db.Tasks.Find
 app.MapPost("/tasks", async (Task task, AppDbContext db) =>{
     db.Tasks.Add(task);
     await db.SaveChangesAsync();
-    return Results.Created($"/tarefas/{task.Id}", task);
+    return Results.Created($"/tasks/{task.Id}", task);
 });
 
 app.MapPut("/tasks/{id}", async (int id, Task inputTask, AppDbContext db) =>
@@ -48,7 +48,7 @@ app.MapPut("/tasks/{id}", async (int id, Task inputTask, AppDbContext db) =>
     return Results.Ok(inputTask);
 });
 
-app.MapDelete("/tarefas/{id}", async(int id, AppDbContext db) =>
+app.MapDelete("/tasks/{id}", async(int id, AppDbContext db) =>
 {
     if(await db.Tasks.FindAsync(id) is Task task)
     {
