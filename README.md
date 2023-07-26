@@ -10,9 +10,9 @@ It uses Entity Framework in memory.
 
 `GET /tasks` Retrieves a list with all tasks.
 
-`GET /tasks/completed` Retrives a list with completed tasks.
+`GET /tasks/completed` Retrieves a list with completed tasks.
 
-`GET /tasks/{id}` Retrives a specific task by it ID.
+`GET /tasks/{id}` Retrieves a specific task by it ID.
 
 `PUT /tasks/{id}` Updates a specific task by it ID using JSON payload.
 
